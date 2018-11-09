@@ -3,17 +3,33 @@
     <header class="header">
       <h1>Tarefas</h1>
       <input-task></input-task>
+      <task-list :todo-list="tasks"></task-list>
     </header>
   </section>
 </template>
 
 <script>
 import InputTask from './components/InputTask'
+import TaskList from './components/TaskList'
+import { Task } from './models/Task'
+let tasks = []
+let task = new Task()
+task.completed = false
+task.title = 'Tarefa'
+tasks.push(task)
+tasks.push(task)
+tasks.push(task)
 
 export default {
   name: 'App',
   components: {
-    InputTask
+    InputTask,
+    TaskList
+  },
+  data () {
+    return {
+      tasks: tasks
+    }
   }
 }
 </script>
