@@ -2,7 +2,7 @@
   <section class="todoapp">
     <header class="header">
       <h1>Tarefas</h1>
-      <input-task></input-task>
+      <input-task @newTask="addTask"></input-task>
       <task-list :todo-list="tasks"></task-list>
     </header>
   </section>
@@ -29,6 +29,12 @@ export default {
   data () {
     return {
       tasks: tasks
+    }
+  },
+  methods: {
+    addTask (task) {
+      console.log("chegou aki");
+      this.tasks.push(task)
     }
   }
 }

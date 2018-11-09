@@ -20,7 +20,8 @@ export default {
       let task = new Task()
       task.completed = false
       task.title = value
-      console.log(task)
+      console.log('task added - emitting event', task)
+      this.$emit('newTask', task)
     }
   }
 }
