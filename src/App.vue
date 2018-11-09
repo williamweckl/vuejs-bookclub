@@ -11,14 +11,6 @@
 <script>
 import InputTask from './components/InputTask'
 import TaskList from './components/TaskList'
-import { Task } from './models/Task'
-let tasks = []
-let task = new Task()
-task.completed = false
-task.title = 'Tarefa'
-tasks.push(task)
-tasks.push(task)
-tasks.push(task)
 
 export default {
   name: 'App',
@@ -28,12 +20,11 @@ export default {
   },
   data () {
     return {
-      tasks: tasks
+      tasks: []
     }
   },
   methods: {
     addTask (task) {
-      console.log("chegou aki");
       this.tasks.push(task)
     }
   }
