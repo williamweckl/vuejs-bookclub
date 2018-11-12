@@ -4,7 +4,9 @@
         class="todo"
         :key="index">
       <div class="view">
-        <label>{{ todo.title }}</label>
+        <input class="toggle" @click="toggleCompleteTask(todo)" type="checkbox">
+        <label v-if="todo.completed" class="todo-completed">{{ todo.title }}</label>
+        <label v-else>{{ todo.title }}</label>
       </div>
     </li>
   </ul>
@@ -21,6 +23,11 @@ export default {
         if (a.title > b.title) return 1
         return 0
       })
+    }
+  },
+  methods: {
+    toggleCompleteTask (task) {
+      task.completed = !task.completed
     }
   }
 }
