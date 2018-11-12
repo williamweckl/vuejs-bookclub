@@ -5,8 +5,9 @@
         :key="index">
       <div class="view">
         <input class="toggle" @click="toggleCompleteTask(todo)" type="checkbox">
-        <label v-if="todo.completed" class="todo-completed">{{ todo.title }}</label>
-        <label v-else>{{ todo.title }}</label>
+        <label :class="{ 'todo-completed': todo.completed }">
+          {{ todo.title }}
+        </label>
       </div>
     </li>
   </ul>
